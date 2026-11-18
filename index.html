@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>觀海上師開示｜睡前安心的智慧</title>
+<meta name="description" content="">
+<meta property="og:title" content="觀海上師開示｜睡前安心的智慧">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --abyss:#06141a;      /* 夜裡的海 */
+  --sea:#0e2a33;        /* 海面的青 */
+  --mist:#f1e9da;       /* 霧與紙 */
+  --gold:#e2b45a;       /* 酥油燈 */
+  --gold-deep:#b88a35;
+  --robe:#5c1a22;       /* 僧袍的暗紅 */
+  --warn:#c4434f;
+  --ink:#1b1410;
+  --measure:34em;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:calc(100% * var(--fs,1) * var(--visitor,1))}
+body{margin:0;background:var(--abyss);color:var(--mist);font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:400;line-height:2;letter-spacing:.04em;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--gold)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* ───── 頂端：防詐橫條＋選單 ───── */
+.chrome{position:absolute;inset:0 0 auto 0;z-index:5}
+.strip{margin:0;padding:.45em clamp(18px,4vw,56px);background:rgba(92,26,34,.94);color:var(--mist);font-size:.9rem;line-height:1.7;text-align:center}
+.strip a{color:var(--gold);margin-left:.6em;white-space:nowrap}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px clamp(18px,4vw,56px)}
+.top img{width:54px;height:54px}
+.top nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:.4em clamp(14px,2.6vw,36px);font-size:1rem}
+.top nav a{color:var(--mist);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.top nav a:hover{border-color:var(--gold);color:var(--gold)}
+.sizes{display:flex;align-items:center;gap:.15em;font-size:.9rem;color:rgba(241,233,218,.8)}
+.sizes:empty{display:none}
+.sizes button{font:inherit;color:var(--mist);background:none;border:1px solid transparent;border-radius:2px;padding:0 .5em;cursor:pointer}
+.sizes button:hover{border-color:rgba(226,180,90,.6)}
+.sizes button[aria-pressed=true]{background:var(--gold);color:var(--ink);font-weight:600}
+
+/* ───── 主視覺：直書的名號立在雲海上 ───── */
+.hero{position:relative;min-height:100svh;overflow:hidden;display:grid;grid-template-columns:1fr auto;align-items:end;padding:0 clamp(18px,6vw,96px) clamp(48px,9vh,110px)}
+.hero::before{content:"";position:absolute;inset:0;background:url(img/hero.jpg) left 42%/cover no-repeat;z-index:0}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:
+  linear-gradient(90deg,rgba(6,20,26,0) 30%,rgba(6,20,26,.55) 72%,rgba(6,20,26,.82) 100%),
+  linear-gradient(180deg,rgba(6,20,26,.4) 0%,rgba(6,20,26,0) 30%,rgba(6,20,26,0) 62%,var(--abyss) 100%)}
+.hero > *{position:relative;z-index:2}
+.say{align-self:end;padding-bottom:.4em;margin-left:clamp(0px,17vw,300px)}
+.say p{margin:0;font-size:clamp(1.15rem,1.9vw,1.6rem);line-height:2.1;text-shadow:0 2px 18px rgba(0,0,0,.85),0 0 4px rgba(0,0,0,.6)}
+.say .btn{margin-top:1.8em}
+.name{writing-mode:vertical-rl;text-orientation:upright;margin:0;display:flex;gap:.55em;align-items:flex-start;justify-self:end;align-self:center;padding-top:clamp(40px,6svh,70px)}
+.name strong,.name span{white-space:nowrap}
+.name strong{font-weight:900;font-size:calc(clamp(4.6rem,13svh,9rem) * var(--ns,1) / var(--fs,1) / var(--visitor,1));line-height:1.08;letter-spacing:.1em;color:var(--gold);text-shadow:0 0 42px rgba(226,180,90,.28),0 4px 26px rgba(0,0,0,.65)}
+.name span{font-weight:600;font-size:clamp(1.3rem,3svh,2rem);letter-spacing:.5em;color:var(--mist);padding-top:.6em}
+
+.btn{display:inline-block;font:inherit;font-weight:600;font-size:1.05rem;letter-spacing:.16em;color:var(--ink);background:linear-gradient(180deg,#f0cc7c,var(--gold) 55%,var(--gold-deep));border:0;border-radius:2px;padding:.8em 2em;text-decoration:none;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.45);line-height:1.6}
+.btn:hover{filter:brightness(1.08)}
+
+@media (prefers-reduced-motion:no-preference){
+  .name strong{animation:rise 2.2s cubic-bezier(.2,.7,.2,1) both}
+  .name span,.say{animation:rise 2.2s .5s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes rise{from{opacity:0;filter:blur(14px);transform:translateY(18px)}to{opacity:1;filter:none;transform:none}}
+}
+
+/* ───── 區塊共用 ───── */
+section{padding:clamp(72px,12vh,150px) clamp(20px,6vw,96px)}
+h2{font-weight:900;font-size:calc(clamp(2rem,4.6vw,3.4rem) * var(--hs,1));letter-spacing:.14em;line-height:1.35;margin:0 0 .9em;color:var(--mist)}
+.lead{max-width:var(--measure);font-size:1.12rem;margin:0}
+
+/* ───── 上師 ───── */
+.master{display:grid;grid-template-columns:minmax(220px,360px) 1fr;gap:clamp(32px,6vw,96px);align-items:center;background:linear-gradient(180deg,var(--abyss),var(--sea))}
+.niche{border-radius:999px 999px 6px 6px;overflow:hidden;border:1px solid rgba(226,180,90,.6);box-shadow:0 0 0 10px rgba(226,180,90,.07),0 30px 80px rgba(0,0,0,.55);background:#0e0a08}
+.niche img{width:100%;aspect-ratio:36/50;object-fit:cover}
+.master blockquote{margin:1.6em 0 0;padding:0;font-size:clamp(1.35rem,2.6vw,2rem);font-weight:600;line-height:1.9;color:var(--gold);max-width:16em}
+.master small{display:block;margin-top:2em;font-size:.9rem;line-height:1.9;color:rgba(241,233,218,.72);max-width:var(--measure)}
+
+/* ───── 開示 ───── */
+.talks{background:var(--sea)}
+.talk{display:grid;grid-template-columns:minmax(260px,560px) 1fr;gap:clamp(24px,5vw,72px);align-items:center;margin-top:2.4em}
+.talk a.shot{display:block;border:1px solid rgba(226,180,90,.45);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.talk h3{font-weight:900;font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.6;margin:0 0 .5em;letter-spacing:.08em}
+.talk p{margin:0 0 1.4em;max-width:26em}
+.more{margin-top:3.4em;display:flex;flex-wrap:wrap;align-items:center;gap:1em 1.6em;color:rgba(241,233,218,.8)}
+.more p{margin:0}
+.btn.line{background:none;color:var(--gold);border:1px solid var(--gold);box-shadow:none}
+
+/* ───── 防詐騙 ───── */
+.fraud{background:var(--abyss)}
+.fraud-box{max-width:56em;margin:0 auto;padding:clamp(28px,5vw,56px);border:1px solid rgba(196,67,79,.55);border-left:8px solid var(--warn);background:linear-gradient(135deg,rgba(92,26,34,.42),rgba(92,26,34,.12))}
+.fraud h2{color:#f6d6d0;margin-bottom:.5em}
+.fraud ul{list-style:none;margin:1.2em 0 1.4em;padding:0}
+.fraud li{position:relative;padding:.55em 0 .55em 2.1em;border-bottom:1px solid rgba(241,233,218,.12);font-size:1.06rem}
+.fraud li::before{content:"×";position:absolute;left:.2em;top:.38em;font-size:1.3em;font-weight:900;color:var(--warn)}
+.fraud .end{margin:0;font-weight:600;font-size:1.08rem;color:var(--gold)}
+
+/* ───── 解惑專區 ───── */
+.ask{position:relative;background:url(img/lamps.jpg) center/cover fixed}
+.ask::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--abyss) 0%,rgba(40,10,14,.88) 18%,rgba(22,6,8,.94) 100%)}
+.ask > *{position:relative}
+.ask .cols{display:grid;grid-template-columns:1fr minmax(320px,620px);gap:clamp(32px,6vw,96px);align-items:start}
+.ask ul{margin:1.6em 0 0;padding:0;list-style:none;max-width:24em}
+.ask li{padding:.9em 0;border-top:1px solid rgba(226,180,90,.28)}
+.ask li:last-child{border-bottom:1px solid rgba(226,180,90,.28)}
+.gift{margin-top:2.4em;max-width:24em;padding:1.4em 1.5em;border:1px solid rgba(226,180,90,.55);background:rgba(6,20,26,.5)}
+.gift h3{margin:0 0 .3em;font-size:1.25rem;font-weight:900;letter-spacing:.12em;color:var(--gold)}
+.gift p{margin:0 0 1.1em}
+.care{margin-top:2em;padding:1em 1.2em;border-left:4px solid var(--gold);background:rgba(6,20,26,.55);max-width:30em}
+.care strong{color:var(--gold);font-weight:600}
+.care p{margin:0}
+.letter{background:var(--mist);color:var(--ink);padding:clamp(24px,4vw,48px);border-top:6px solid var(--robe);box-shadow:0 40px 100px rgba(0,0,0,.6)}
+.letter label{display:block;font-weight:600;margin:1.3em 0 .35em;letter-spacing:.08em}
+.letter label:first-child{margin-top:0}
+.letter .hint{font-weight:400;font-size:.9rem;color:#6b5c4c;letter-spacing:.03em;margin-left:.5em}
+.letter input[type=text],.letter select,.letter textarea{width:100%;font:inherit;line-height:1.8;color:var(--ink);background:#fbf7ee;border:1px solid #bfae93;border-radius:2px;padding:.6em .8em}
+.letter textarea{min-height:15em;resize:vertical}
+.letter .agree{display:grid;grid-template-columns:auto 1fr;gap:.8em;align-items:start;margin-top:1.4em;font-weight:400;line-height:1.8;font-size:.98rem}
+.letter .agree input{width:1.25em;height:1.25em;margin-top:.35em;accent-color:var(--robe)}
+.letter .btn{margin-top:1.6em;background:var(--robe);color:var(--mist);box-shadow:none}
+.letter .btn[disabled]{opacity:.55;cursor:default}
+.letter .state{margin:1.2em 0 0;font-weight:600;min-height:1.8em}
+.letter .state.err{color:#8a1c1c}
+.letter .state.ok{color:#2c5a3a}
+
+/* ───── 抖內視窗 ───── */
+dialog{width:min(34rem,calc(100% - 32px));border:0;border-top:6px solid var(--gold-deep);padding:clamp(24px,4vw,40px);background:var(--mist);color:var(--ink);box-shadow:0 40px 120px rgba(0,0,0,.7)}
+dialog::backdrop{background:rgba(4,13,17,.78)}
+dialog h3{margin:0 0 .6em;font-size:1.5rem;font-weight:900;letter-spacing:.12em;color:var(--robe)}
+dialog p{margin:0 0 1em}
+dialog small{display:block;margin:1.2em 0 0;font-size:.9rem;line-height:1.8;color:#5b4c3d;border-top:1px solid #d8c9ae;padding-top:1em}
+dialog .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.6em}
+dialog .btn{box-shadow:none}
+dialog .btn.plain{background:none;color:var(--ink);border:1px solid #bfae93}
+dialog .btn[aria-disabled=true]{opacity:.5;cursor:default;pointer-events:none}
+
+/* ───── 頁尾 ───── */
+footer{padding:56px clamp(20px,6vw,96px) 72px;background:#040d11;font-size:.92rem;line-height:2;color:rgba(241,233,218,.72)}
+footer p{max-width:44em;margin:0 0 1em}
+footer .links{display:flex;flex-wrap:wrap;gap:1.6em;margin-bottom:1.8em;font-size:1rem}
+
+/* ───── 平板（兩欄太擠時改成上下排） ───── */
+@media (max-width:1100px){
+  .ask .cols,.talk{grid-template-columns:1fr}
+  .ask .cols > div:first-child{max-width:40em}
+}
+
+/* ───── 手機 ───── */
+@media (max-width:820px){
+  .top nav a.hide-s{display:none}
+  .hero{grid-template-columns:1fr;align-items:end;padding-bottom:42px}
+  .hero::before{background:url(img/hero-m.jpg) left 30%/cover no-repeat}
+  .hero::after{background:linear-gradient(180deg,rgba(6,20,26,.5) 0%,rgba(6,20,26,.1) 30%,rgba(6,20,26,.35) 58%,var(--abyss) 100%)}
+  .name{position:absolute;top:150px;right:18px;padding-top:0}
+  .name strong{font-size:calc(clamp(3rem,7.6svh,4.3rem) * var(--ns,1) / var(--fs,1) / var(--visitor,1))}
+  .name span{display:none}
+  .say{max-width:none;margin-left:0}
+  .say p{font-size:1rem;letter-spacing:0}
+  .master,.talk,.ask .cols{grid-template-columns:1fr}
+  .niche{max-width:300px}
+  .ask{background-attachment:scroll}
+}
+</style>
+</head>
+<body>
+
+<div class="chrome">
+  <p class="strip"><span data-t="防詐橫條"></span><a href="#fraud" data-t="防詐橫條連結"></a></p>
+  <header class="top">
+    <a href="#top" aria-label="回到最上面"><img src="img/logo.png" alt="觀海上師開示"></a>
+    <nav aria-label="主選單">
+      <a class="hide-s" href="#master" data-t="選單_上師"></a>
+      <a class="hide-s" href="#talks" data-t="選單_開示"></a>
+      <a class="hide-s" href="#fraud" data-t="選單_防詐"></a>
+      <a href="#ask" data-t="選單_解惑"></a>
+      <span class="sizes" id="sizes" role="group" aria-label="字體大小"></span>
+    </nav>
+  </header>
+</div>
+
+<main id="top">
+  <div class="hero">
+    <div class="say">
+      <p data-t="開場"></p>
+      <a class="btn" href="#ask" data-t="主視覺按鈕"></a>
+    </div>
+    <h1 class="name"><strong data-t="名號"></strong><span data-t="名號小字"></span></h1>
+  </div>
+
+  <section class="master" id="master">
+    <div class="niche"><img id="masterImg" src="img/master-temple.jpg" alt="觀海上師" width="720" height="1000" loading="lazy"></div>
+    <div>
+      <h2 data-t="上師標題"></h2>
+      <p class="lead" data-t="上師介紹"></p>
+      <blockquote data-t="上師金句"></blockquote>
+      <small data-t="AI說明"></small>
+    </div>
+  </section>
+
+  <section class="talks" id="talks">
+    <h2 data-t="開示標題"></h2>
+    <p class="lead" data-t="開示說明"></p>
+    <div id="talkList"></div>
+    <div class="more"><p data-t="開示更多"></p><a class="btn line" data-link="YouTube頻道" target="_blank" rel="noopener" data-t="開示更多按鈕"></a></div>
+  </section>
+
+  <section class="fraud" id="fraud">
+    <div class="fraud-box">
+      <h2 data-t="防詐標題"></h2>
+      <p class="lead" data-t="防詐開頭"></p>
+      <ul data-list="防詐清單"></ul>
+      <p class="end" data-t="防詐結尾"></p>
+    </div>
+  </section>
+
+  <section class="ask" id="ask">
+    <div class="cols">
+      <div>
+        <h2 data-t="解惑標題"></h2>
+        <p class="lead" data-t="解惑開頭"></p>
+        <ul data-list="解惑清單"></ul>
+        <div class="gift">
+          <h3 data-t="抖內卡片標題"></h3>
+          <p data-t="抖內卡片文字"></p>
+          <button class="btn" type="button" data-open-donate data-t="抖內按鈕"></button>
+        </div>
+        <div class="care"><p><strong data-t="難熬標題"></strong><br><span data-t="難熬內容"></span></p></div>
+      </div>
+
+      <form class="letter" id="letter" novalidate>
+        <label for="nick"><span data-t="表單_稱呼"></span><span class="hint" data-t="表單_稱呼提示"></span></label>
+        <input type="text" id="nick" name="nick" maxlength="20" autocomplete="off">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <label for="topic" data-t="表單_主題"></label>
+        <select id="topic" name="topic"></select>
+        <label for="story"><span data-t="表單_故事"></span><span class="hint" data-t="表單_故事提示"></span></label>
+        <textarea id="story" name="story" maxlength="4000" required></textarea>
+        <label class="agree" for="agree"><input type="checkbox" id="agree" name="agree" required><span data-t="表單_同意"></span></label>
+        <button class="btn" type="submit" data-t="表單_寄出"></button>
+        <p class="state" id="state" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="links">
+    <a data-link="YouTube頻道" target="_blank" rel="noopener" data-t="頁尾_YouTube"></a>
+    <a href="#ask" data-t="頁尾_解惑"></a>
+    <a href="#" data-open-donate data-t="抖內按鈕"></a>
+    <a href="#top" data-t="頁尾_回頂"></a>
+  </div>
+  <p data-t="頁尾AI說明"></p>
+  <p data-t="頁尾隱私"></p>
+</footer>
+
+<dialog id="donate" aria-labelledby="donateTitle">
+  <h3 id="donateTitle" data-t="抖內視窗標題"></h3>
+  <p data-t="抖內視窗內容"></p>
+  <div class="row">
+    <a class="btn" id="donateGo" target="_blank" rel="noopener"></a>
+    <button class="btn plain" type="button" id="donateClose" data-t="關閉"></button>
+  </div>
+  <small data-t="抖內視窗說明"></small>
+</dialog>
+
+<script src="content.js"></script>
+<script>
+let D = window.官網資料 || { 樣式: {}, 連結: {}, 文字: {}, 開示: [] };
+const root = document.documentElement;
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const rich = (s) => esc(s).replace(/\n/g, "<br>");
+const lines = (s) => String(s ?? "").split("\n").map((x) => x.trim()).filter(Boolean);
+const T = (k) => (D.文字 || {})[k] ?? "";
+
+function render(data) {
+  D = data;
+  const S = D.樣式 || {}, L = D.連結 || {};
+  document.querySelectorAll("[data-t]").forEach((el) => { el.innerHTML = rich(T(el.dataset.t)); });
+  document.querySelectorAll("[data-list]").forEach((ul) => { ul.innerHTML = lines(T(ul.dataset.list)).map((x) => `<li>${esc(x)}</li>`).join(""); });
+  document.querySelectorAll("[data-link]").forEach((a) => { a.href = L[a.dataset.link] || "#"; });
+  document.title = T("網頁標題") || document.title;
+  document.querySelector('meta[name="description"]').content = T("網頁說明");
+  const topic = document.getElementById("topic"), keep = topic.value;
+  topic.innerHTML = lines(T("表單_主題選項")).map((x) => `<option>${esc(x)}</option>`).join("");
+  if (keep) topic.value = keep;
+  root.style.setProperty("--fs", S.字體大小 || 1);
+  root.style.setProperty("--hs", S.標題大小 || 1);
+  root.style.setProperty("--ns", S.名號大小 || 1);
+  document.getElementById("masterImg").src = "img/" + (S.上師圖片 || "master-temple.jpg");
+  document.getElementById("talkList").innerHTML = (D.開示 || []).map((t) => `
+    <div class="talk">
+      <a class="shot" href="${esc(t.網址)}" target="_blank" rel="noopener"><img src="img/${esc(t.圖片)}" alt="${esc(String(t.標題).replace(/\n/g, ""))}" width="1280" height="720" loading="lazy"></a>
+      <div><h3>${rich(t.標題)}</h3><p>${rich(t.說明)}</p><a class="btn" href="${esc(t.網址)}" target="_blank" rel="noopener">${esc(t.按鈕 || "到 YouTube 聽這一則")}</a></div>
+    </div>`).join("");
+  const go = document.getElementById("donateGo");
+  if (L.抖內網址) { go.href = L.抖內網址; go.textContent = T("抖內前往"); go.removeAttribute("aria-disabled"); }
+  else { go.removeAttribute("href"); go.textContent = T("抖內未設定"); go.setAttribute("aria-disabled", "true"); }
+  sizes(S.訪客可調字級 !== false);
+}
+
+// ── 訪客自己調字級（記在這台裝置上）
+const LEVELS = [["小", 0.9], ["中", 1], ["大", 1.2], ["特大", 1.4]];
+function sizes(on) {
+  const box = document.getElementById("sizes");
+  box.innerHTML = "";
+  if (!on) { root.style.setProperty("--visitor", 1); return; }
+  box.append(T("字級標籤") || "字");
+  let cur = 1;
+  try { cur = Number(localStorage.getItem("字級")) || 1; } catch (e) { /* 無痕視窗存不了，不影響使用 */ }
+  const pick = (v) => {
+    root.style.setProperty("--visitor", v);
+    box.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(Number(b.dataset.v) === v)));
+    try { localStorage.setItem("字級", v); } catch (e) { /* 同上 */ }
+  };
+  LEVELS.forEach(([name, v]) => { const b = document.createElement("button"); b.type = "button"; b.textContent = name; b.dataset.v = v; b.onclick = () => pick(v); box.append(b); });
+  pick(LEVELS.some(([, v]) => v === cur) ? cur : 1);
+}
+
+// ── 抖內視窗
+const dlg = document.getElementById("donate");
+document.addEventListener("click", (e) => { if (e.target.closest("[data-open-donate]")) { e.preventDefault(); dlg.showModal(); } });
+document.getElementById("donateClose").onclick = () => dlg.close();
+dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+
+// ── 寫信表單：收信網址沒設定時，不會假裝寄出去
+const form = document.getElementById("letter"), state = document.getElementById("state"), sendBtn = form.querySelector("button");
+const say = (k, kind) => { state.textContent = T(k); state.className = "state " + (kind || ""); };
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const story = form.story.value.trim();
+  if (story.length < 20) { say("訊息_太短", "err"); form.story.focus(); return; }
+  if (!form.agree.checked) { say("訊息_沒勾", "err"); form.agree.focus(); return; }
+  const L = D.連結 || {}, url = L.收信網址, f = L.表單欄位 || {};
+  if (!url || !f.story) { say("訊息_未接", "err"); return; }
+  if (form.website.value) { form.reset(); say("訊息_成功", "ok"); return; }   // 機器人填了隱藏欄位：不送
+  sendBtn.disabled = true; say("訊息_寄出中");
+  try {
+    // 送進 Google 表單。Google 不讓別的網站讀回覆內容，所以只要網路沒斷就算寄出
+    const body = new URLSearchParams({ [f.nick]: form.nick.value.trim(), [f.topic]: form.topic.value, [f.story]: story });
+    await fetch(url, { method: "POST", mode: "no-cors", body });
+    form.reset(); say("訊息_成功", "ok");
+  } catch (err) { say("訊息_失敗", "err"); }  finally { sendBtn.disabled = false; }
+});
+
+// ── 後台的即時預覽（只接受同一個網站傳來的訊息）
+window.addEventListener("message", (e) => {
+  if (e.origin !== location.origin || !e.data) return;
+  if (e.data.type === "預覽") render(e.data.data);
+  if (e.data.type === "捲到") {
+    if (e.data.id === "donate") { if (!dlg.open) dlg.showModal(); return; }
+    if (dlg.open) dlg.close();
+    document.getElementById(e.data.id)?.scrollIntoView({ behavior: "smooth" });
+  }
+});
+render(D);
+</script>
+</body>
+</html>
